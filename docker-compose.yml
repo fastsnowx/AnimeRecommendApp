@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend/app:/usr/app
+    ports:
+      - "8000:8000"
+    stdin_open: true
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/app:/usr/app
+    ports:
+      - "3000:3000"
+    stdin_open: true
