@@ -4,11 +4,11 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
     volumes:
-      - ./backend/app:/usr/app
+      - ./backend/app:/workspace
     ports:
       - "8000:8000"
+    tty: true
     stdin_open: true
 
   frontend:
@@ -16,7 +16,8 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     volumes:
-      - ./frontend/app:/usr/app
+      - ./frontend/app:/workspace
     ports:
       - "3000:3000"
+    tty: true
     stdin_open: true
