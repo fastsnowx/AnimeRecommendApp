@@ -1,5 +1,5 @@
 FROM python:3.9-buster
-WORKDIR /usr/app/
+WORKDIR /workspace
 ENV TIMEZONE=Asia/Tokyo
 COPY ./requirements.txt .
 
