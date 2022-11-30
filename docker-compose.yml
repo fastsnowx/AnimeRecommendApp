@@ -10,6 +10,10 @@ services:
       - "8000:8000"
     tty: true
     stdin_open: true
+    deploy:
+      resources:
+        limits:
+          memory: 512m
 
   frontend:
     build:
@@ -21,3 +25,7 @@ services:
       - "3000:3000"
     tty: true
     stdin_open: true
+    deploy:
+      resources:
+        limits:
+          memory: 512m
